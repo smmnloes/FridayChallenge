@@ -10,13 +10,7 @@ import java.util.regex.Pattern;
  * them via regex.
  */
 public enum AddressFormat {
-    SIMPLE_GERMAN(
-            new RegexInfo(
-                    Pattern.compile("^([A-zäÄüÜÖö]*)\\s([0-9]*\\s?[A-z]*)$"),
-                    1, 2
-            )),
-
-    ADVANCED_GERMAN(
+    GERMAN(
             new RegexInfo(
                     Pattern.compile("^(([A-zäÄüÜÖö]*\\s)*)([0-9]*\\s?[A-z]*)$"),
                     1, 3
@@ -31,16 +25,11 @@ public enum AddressFormat {
 
     SPANISH(
             new RegexInfo(
-                    Pattern.compile("^(([A-z]|\\s)*),\\s([0-9]*\\s?[A-z]*)$"),
-                    1, 3
+                    Pattern.compile("^(([A-z]|\\s)*([0-9]*\\s)*)(,\\s)?((No\\s)?([0-9]*\\s?)[A-z]*)$"),
+                    1, 5
             )
-    ),
+    );
 
-    SPANISH_WITH_NO(
-            new RegexInfo(
-                    Pattern.compile("^(([A-z]*\\s)*[0-9]*)\\s(No\\s([0-9]*))$"),
-                    1, 3
-            ));
 
     public final RegexInfo regexInfo;
 
