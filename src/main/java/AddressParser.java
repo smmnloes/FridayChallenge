@@ -15,7 +15,7 @@ public class AddressParser {
      * @return JSON Object in format {{"street": "Am Bächle", "housenumber": "25B"}}
      * @throws UnknownFormatConversionException if the format of the input string could not be recognized
      */
-    public JSONObject parse(String input) throws UnknownFormatConversionException {
+    public static JSONObject parse(String input) throws UnknownFormatConversionException {
         for (AddressFormat addressFormat : AddressFormat.values()) {
             Matcher matcher = addressFormat.regexInfo.getPattern().matcher(input);
             if (matcher.matches()) {
