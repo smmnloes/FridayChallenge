@@ -12,7 +12,7 @@ public class AddressParser {
      * Parses a street name and house number that is supplied in an arbitrary format and returns
      * a JSON object that contains this data.
      * @param input String that contains the address data (e.g. "Am Bächle 25B")
-     * @return JSON Object in format {{"street": "Am Bächle", "housenumber": "25B"}}
+     * @return JSON Object in format {"street": "Am Bächle", "housenumber": "25B"}
      * @throws UnknownFormatConversionException if the format of the input string could not be recognized
      */
     public static JSONObject parse(String input) throws UnknownFormatConversionException {
